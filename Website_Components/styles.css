@@ -1,0 +1,1951 @@
+/* GLOBAL / BASE STYLES */
+
+:root {
+    --pet-orange: #F58F1F;
+    --pet-gray:   #363A3D;
+    --bg-light:   #f5f5f5;
+    --footer-bg:  #363A3D;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--pet-gray);
+}
+
+/* HEADER VARIANTS */
+
+/* White header with logo (login, register, intro, add-pet) */
+.top-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 24px;
+}
+
+.logo-img {
+    height: 80px;
+}
+
+/* Old text-based header if you still need it somewhere */
+.top-bar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 20px;
+}
+
+.logo-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--pet-orange);
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+.logo-box span {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+/* ORANGE STRIP UNDER HEADER */
+
+.welcome-strip {
+    background-color: var(--pet-orange);
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+/* ========================= */
+/*    HOME HEADER + WELCOME  */
+/* ========================= */
+
+/* outer shell */
+.home-header {
+    background-color: #f8f5ee;
+    border-bottom: 1px solid #d5d5d5;
+}
+
+/* top pale row with logo on left and icons on right */
+.home-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+}
+
+.home-logo {
+    height: 60px;
+}
+
+.home-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* square icon buttons (reused for menu & pet thumb wrapper) */
+.header-icon-btn,
+.header-menu-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid var(--pet-gray);
+    background-color: #ffffff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* hamburger lines inside menu button */
+.header-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--pet-gray);
+}
+
+/* pet photo inside square */
+.pet-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* dark welcome bar row */
+.welcome-bar {
+    background-color: var(--pet-gray);
+    color: #ffffff;
+    padding: 8px 24px;
+}
+
+.welcome-bar-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.welcome-text {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#welcome-name {
+    color: var(--pet-orange);
+}
+
+/* reuse existing .cta-btn + .logout-btn sizes */
+.logout-btn {
+    padding-inline: 16px;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .welcome-bar-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logout-btn {
+        align-self: flex-end;
+    }
+}
+
+/* INTRO / HERO (if you use it) */
+
+.hero {
+    text-align: center;
+    padding: 40px 20px 80px;
+    background-color: #ffffff;
+}
+
+.hero p {
+    max-width: 900px;
+    margin: 10px auto;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Icon paw columns / groups from older design (still safe to keep) */
+
+.bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.paw-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.paw-group.left {
+    color: #444444;
+}
+
+.paw-group.right {
+    color: var(--pet-orange);
+}
+
+/* PRIMARY BUTTON STYLE (matches screenshot) */
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    padding: 8px 24px;
+    background-color: var(--pet-orange);
+    border-radius: 8px;
+    border: 1px solid var(--pet-gray);
+
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+                background-color 0.15s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ff9e2c;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+    font-size: 13px;
+    line-height: 1;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: var(--footer-bg);
+    color: #f5f5f5;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.footer-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.footer-links li {
+    margin: 2px 0;
+}
+
+.footer-links a {
+    color: #f5f5f5;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Small-screen tweak for intro bottom-row */
+@media (max-width: 700px) {
+    .bottom-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* ========================= */
+/*        LOGIN PAGE        */
+/* ========================= */
+
+.login-main {
+    background-color: #ffffff;
+    padding: 40px 0 80px;
+}
+
+/* layout: gray paws – form – orange paws */
+.login-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+/* paw columns and images */
+.paw-column {
+    display: flex;
+    justify-content: center;
+}
+
+.paw-strip {
+    max-height: 320px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* on login they stay straight; on intro we will rotate with extra classes */
+.login-paw {
+    transform: rotate(0deg);
+}
+
+/* For later (Introduction tilted outward): 
+   .paws-intro-left { transform: rotate(-45deg); }
+   .paws-intro-right { transform: rotate(45deg); }
+*/
+
+.login-card {
+    border: 3px solid var(--pet-orange);
+    padding: 30px 40px;
+    border-radius: 4px;
+    max-width: 380px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    text-align: left;
+    font-size: 14px;
+}
+
+.login-card h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Generic form row (used in register too) */
+
+.form-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-row input {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--pet-orange);
+    font-size: 14px;
+    outline: none;
+}
+
+.form-row input::placeholder {
+    color: #c0c0c0;
+}
+
+.form-row input:focus {
+    box-shadow: 0 0 0 2px rgba(245, 143, 31, 0.25);
+}
+
+.login-actions {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.login-btn {
+    min-width: 120px;
+}
+
+.register-text {
+    font-size: 13px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.register-text a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .login-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .paw-column {
+        order: -1; /* paws go above/below on small screens if needed */
+    }
+}
+
+/* ========================= */
+/*      REGISTER PAGE       */
+/* ========================= */
+
+.register-main {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px 80px;
+}
+
+.register-subtitle {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.register-card {
+    border: 2px solid var(--pet-orange);
+    padding: 30px 40px;
+    border-radius: 4px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.register-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 30px;
+}
+
+.register-card .form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-card input {
+    padding: 8px 10px;
+    border: 1px solid var(--pet-orange);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-actions {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.register-btn {
+    width: 140px;
+}
+
+@media (max-width: 700px) {
+    .register-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ========================= */
+/*     INTRO / INDEX PAGE    */
+/* ========================= */
+
+/* main wrapper so background is white like in Figma */
+.intro-main {
+    background-color: #ffffff;
+    padding: 40px 0 80px;
+}
+
+/* hero text already exists, but this tightens spacing a bit for intro */
+.hero {
+    text-align: center;
+    padding: 20px 20px 40px;
+    background-color: #ffffff;
+}
+
+.hero p {
+    max-width: 900px;
+    margin: 10px auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* paws + button row near the bottom */
+.intro-paws-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 120px;
+    margin-top: 40px;
+}
+
+/* reuse .paw-column and .paw-strip from login,
+   but tilt them outward on this page */
+.paws-intro-left {
+    transform: rotate(-45deg);
+}
+
+.paws-intro-right {
+    transform: rotate(45deg);
+}
+
+.intro-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* slightly larger button on intro page */
+.intro-btn {
+    padding-inline: 32px;
+    font-size: 16px;
+}
+
+/* stack vertically on small screens */
+@media (max-width: 800px) {
+    .intro-paws-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .paws-intro-left,
+    .paws-intro-right {
+        transform: rotate(0deg); /* keep readable on small screens */
+    }
+}
+
+/* ========================= */
+/*      REGISTER PAGE       */
+/* ========================= */
+
+.register-main {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px 80px;
+}
+
+.register-subtitle {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.register-card {
+    border: 2px solid var(--pet-orange);
+    padding: 30px 40px;
+    border-radius: 4px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    text-align: left;              /* card content left-aligned */
+}
+
+.register-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 30px;
+}
+
+/* reusing .form-row + .form-row input from before */
+
+.register-card .form-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-actions {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.register-btn {
+    width: 140px;
+}
+
+/* “Already a member?” line */
+.register-login-text {
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.register-login-text a {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+    .register-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .register-actions {
+        text-align: center;
+    }
+}
+/* ========================= */
+/*     ADD PET PROFILE       */
+/* ========================= */
+
+.add-pet-main {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 40px 20px 80px;
+}
+
+.add-pet-subtitle {
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.add-pet-card {
+    border: 2px solid var(--pet-orange);
+    padding: 30px 40px;
+    border-radius: 4px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    text-align: left;
+    font-size: 14px;
+}
+
+/* two columns like the Figma */
+.add-pet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 40px;
+}
+
+.add-pet-col .form-row {
+    margin-bottom: 18px;
+}
+
+/* birthday row (DD MM YYYY) */
+.birthday-row {
+    display: flex;
+    gap: 10px;
+}
+
+.birthday-row input {
+    width: 70px;
+}
+
+/* Add button area */
+.add-pet-actions {
+    margin-top: 10px;
+}
+
+.add-pet-btn {
+    min-width: 90px;
+}
+
+@media (max-width: 768px) {
+    .add-pet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .birthday-row input {
+        width: 100%;
+    }
+
+    .birthday-row {
+        gap: 8px;
+    }
+}
+/* ========================= */
+/*     APP HEADER (DARK)     */
+/* ========================= */
+
+.app-header {
+    background-color: var(--pet-gray);
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 10px 24px;
+    column-gap: 20px;
+}
+
+.app-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.app-header-logo {
+    height: 50px;
+}
+
+.app-header-center {
+    text-align: center;
+}
+
+.app-header-center h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--pet-orange);
+}
+
+.app-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* square icon button (profile image placeholder) */
+.header-icon-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid var(--pet-gray);
+    background-color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* hamburger menu button */
+.header-menu-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    border: 1px solid var(--pet-gray);
+    background-color: #ffffff;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.header-menu-btn span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--pet-gray);
+}
+
+/* logout button reuse .cta-btn but smaller */
+.logout-btn {
+    padding-inline: 16px;
+    font-size: 14px;
+}
+
+/* ========================= */
+/*      DASHBOARD / HOME     */
+/* ========================= */
+
+.app-main {
+    background-color: #ffffff;
+    padding: 40px 24px 80px;
+}
+
+.dashboard-main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Two big panels row */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Make the panels a bit fancier */
+.dash-panel {
+    border: 2px solid #2f3336;
+    background-color: #ffffff;
+    padding: 16px 18px 22px;
+    border-radius: 10px; /* rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Empty state styling */
+.dash-empty-state {
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #fafafa, #fdfdfd);
+}
+
+.dash-empty-main {
+    font-size: 14px;
+    color: #777777;
+    font-style: italic;
+}
+
+
+.dash-panel-header {
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2f3336;
+    padding-bottom: 6px;
+}
+
+.dash-panel-body {
+    margin-top: 6px;
+}
+
+/* appointments table */
+.dash-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.dash-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.dash-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dash-actions {
+    text-align: right;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+/* small buttons inside table */
+.dash-small-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* dark-outline button like your Cancel buttons */
+.dash-outline-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid #2f3336;
+    background-color: #ffffff;
+    color: #2f3336;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* reminders box on right panel */
+.dash-reminders-box {
+    min-height: 120px;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Bottom three “box buttons” */
+.dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 280px;
+}
+
+.outline-link-btn {
+    display: block;
+    padding: 14px 20px;
+    border: 2px solid var(--pet-orange);
+    border-radius: 14px;
+    background-color: #ffffff;
+    color: var(--pet-gray);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    transition: 0.2s ease;
+}
+
+.outline-link-btn:hover {
+    background-color: var(--pet-orange);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-actions {
+        max-width: 100%;
+    }
+}
+/* ========================= */
+/*       PROFILE PAGE        */
+/* ========================= */
+
+.profile-main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* two big boxes, side by side */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1.3fr;
+    gap: 40px;
+}
+
+/* big white rectangle with dark border, like Figma */
+.profile-card {
+    border: 3px solid #2f3336;
+    background-color: #ffffff;
+    min-height: 340px;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* left card text list */
+.profile-info-list p {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.profile-label {
+    font-weight: 700;
+}
+
+/* bottom-left “Edit Info” button */
+.profile-card-actions {
+    margin-top: 20px;
+}
+
+.profile-edit-btn {
+    padding-inline: 18px;
+}
+
+/* right card layout */
+.profile-right-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* “Medical Records” and “Treatments” text */
+.profile-section-title {
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* push “Treatments” lower down to match Figma spacing */
+.profile-section-title-lower {
+    margin-top: 40px;
+}
+
+/* Add Record button somewhere below Treatments, not at very bottom */
+.profile-add-btn {
+    margin-top: 40px;
+    align-self: flex-start;
+    padding-inline: 18px;
+}
+
+@media (max-width: 900px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ========================= */
+/*      RESERVATION PAGE     */
+/* ========================= */
+
+.reservation-main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* orange-bordered card in the center */
+.reservation-card {
+    border: 2px solid var(--pet-orange);
+    padding: 30px 40px 26px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    font-size: 14px;
+}
+
+.reservation-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* section blocks: Service type, Location, Date, Notes */
+.reservation-section {
+    margin-bottom: 18px;
+}
+
+.reservation-label {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* inline checkbox rows */
+.reservation-check {
+    display: block;
+    margin: 4px 0;
+    font-weight: 400;
+}
+
+.reservation-check input {
+    margin-right: 8px;
+}
+
+/* date input styled like your other inputs */
+.reservation-date-input {
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--pet-orange);
+    font-size: 14px;
+    min-width: 220px;
+}
+
+/* notes text area */
+.reservation-notes {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--pet-orange);
+    font-size: 14px;
+    resize: vertical;
+}
+
+/* Confirm button aligned to right bottom of card */
+.reservation-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.reservation-btn {
+    min-width: 110px;
+}
+
+@media (max-width: 700px) {
+    .reservation-card {
+        padding: 24px 18px;
+    }
+
+    .reservation-date-input {
+        width: 100%;
+    }
+}
+/* ========================= */
+/*        CALENDAR PAGE      */
+/* ========================= */
+
+.calendar-main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* big white calendar box */
+.calendar-wrapper {
+    border: 2px solid #d0d0d0;
+    background-color: #ffffff;
+    padding: 20px 24px 26px;
+}
+
+/* top row: month + nav arrows */
+.calendar-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #3b314d;
+    padding-bottom: 8px;
+}
+
+.calendar-month {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.calendar-nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.calendar-nav-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid #999;
+    background-color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* table structure */
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 13px;
+}
+
+.calendar-table thead th {
+    padding: 8px 4px;
+    border-bottom: 1px solid #cccccc;
+    text-align: left;
+    font-weight: 600;
+}
+
+.calendar-cell {
+    border: 1px solid #ececec;
+    height: 78px;
+    vertical-align: top;
+    padding: 4px 6px;
+    position: relative;
+    background-color: #fafafa;
+}
+
+.calendar-cell.other-month {
+    background-color: #fdfdfd;
+    color: #bbbbbb;
+}
+
+/* day number in corner */
+.calendar-day-number {
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* event pills */
+.calendar-event {
+    display: block;
+    margin-top: 3px;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.calendar-event--veterinary {
+    background-color: #d9e4ff; /* light blue */
+}
+
+.calendar-event--grooming {
+    background-color: #ffd8e3; /* pink */
+}
+
+.calendar-event--boarding {
+    background-color: #ffe9c8; /* peach */
+}
+
+
+
+/* the blue circle on 27th (just for style) */
+.calendar-event--circle {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* legend at bottom */
+.calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 14px;
+    font-size: 12px;
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* same colors as event pills */
+/* same pastel colors, just renamed */
+.legend-veterinary { background-color: #d9e4ff; }  /* light blue */
+.legend-grooming   { background-color: #ffd8e3; }  /* pink */
+.legend-boarding   { background-color: #ffe9c8; }  /* peach */
+
+
+@media (max-width: 900px) {
+    .calendar-wrapper {
+        padding: 16px 10px 20px;
+    }
+
+    .calendar-table {
+        font-size: 11px;
+    }
+
+    .calendar-cell {
+        height: 70px;
+    }
+}
+/* ========================= */
+/*     NOTIFICATIONS PAGE    */
+/* ========================= */
+
+.notifications-main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* bell + title spacing */
+.notifications-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.notif-bell {
+    font-size: 24px;
+}
+
+/* main white card holding the table */
+.notifications-card {
+    background-color: #ffffff;
+    border: 2px solid #dde0e3;
+    border-radius: 4px;
+    padding: 18px 20px 24px;
+}
+
+/* table styling similar to Figma */
+.notifications-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.notifications-table thead tr {
+    background-color: #f3f5f8;
+}
+
+.notifications-table th,
+.notifications-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: left;
+}
+
+.notifications-table th {
+    font-weight: 600;
+}
+
+.notifications-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* action cell layout: View + Dismiss on one row, Reschedule below */
+.notif-actions-cell {
+    min-width: 220px;
+}
+
+.notif-actions-top {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+/* orange View button — reuse cta-btn but smaller and squared off */
+.notif-view-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+/* dark Dismiss button */
+.notif-dismiss-btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #2b2d30;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* white Reschedule button with orange border */
+.notif-resched-btn {
+    padding: 6px 16px;
+    border-radius: 4px;
+    border: 1.5px solid var(--pet-orange);
+    background-color: #ffffff;
+    color: var(--pet-orange);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.notif-dismiss-btn:hover,
+.notif-resched-btn:hover,
+.notif-view-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+    .notif-actions-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .notif-actions-cell {
+        min-width: 0;
+    }
+}
+/* Flex row for input + eye + error */
+.password-row {
+    width: 100%;
+    flex-wrap: wrap;          /* allow items to go to next line */
+    column-gap: 0.5rem;       /* space between input and eye */
+    align-items: flex-start;  /* so input + eye align to top, error under */
+}
+
+/* Eye button to the right of the input */
+.toggle-password-outside {
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.1rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #f1f1f1;
+    border: 1px solid #ddd;
+    transition: 0.2s ease-in-out;
+    flex-shrink: 0;           /* don't let it shrink */
+}
+
+.toggle-password-outside:hover {
+    background: #e6e6e6;
+    border-color: #bbb;
+}
+
+/* Make the error drop to its own line, under the whole row */
+.password-row .invalid-feedback {
+    flex: 0 0 100%;           /* force it onto its own line */
+    width: 100%;              /* full width under input + eye */
+    margin-top: 0.25rem;
+}
+/* ========================= */
+/*    PET PHOTO UPLOADER     */
+/* ========================= */
+
+.pet-photo-row {
+    margin-bottom: 20px;
+}
+
+.pet-photo-preview-wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--pet-orange);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.pet-photo-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-header-center h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--pet-orange);
+    text-align: center;
+    margin: 0;
+}
+
+/* Pet photo in header */
+.header-pet-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Keep header-right items nicely aligned */
+.app-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* --- Vertical sidebar for PetCare+ --- */
+
+#nav-menu {
+  background-color: var(--pet-gray);
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -250px;               /* hidden off-screen to the RIGHT */
+  left: auto;                  /* make sure left isn't used */
+  display: flex;
+  justify-content: flex-start;
+  transition: right 0.35s ease;
+  z-index: 1050;
+}
+
+#nav-menu.active {
+  right: 0;                    /* slide in from the right */
+}
+
+
+.nav-menu-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+#navbar-toggle {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid #464646;
+}
+
+.sidebar-title {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.menu-bars {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-text {
+  list-style: none;
+}
+
+.nav-text a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-text a:hover {
+  background-color: rgba(245, 143, 31, 0.2); /* pet-orange glow */
+  cursor: pointer;
+}
+
+/* Dark overlay behind sidebar */
+#sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1040;
+}
+
+#sidebar-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ========================= */
+/*     PET PHOTO POPUP       */
+/* ========================= */
+
+.pet-photo-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    display: none;                /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;                /* above sidebar */
+}
+
+.pet-photo-popup.active {
+    display: flex;
+}
+
+.pet-photo-full {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    object-fit: contain;
+    cursor: pointer;            /* clicking the image also closes if you want */
+}
+
+/* ========================= */
+/*      FOOTER MODAL         */
+/* ========================= */
+
+.footer-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1900;
+}
+
+.footer-modal-overlay.active {
+    display: flex;
+}
+
+.footer-modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 90%;
+    padding: 20px 22px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    font-size: 14px;
+}
+
+.footer-modal h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.footer-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+}
+
+.footer-modal-close:hover {
+    color: #000;
+}
+/* Pet profiles section in sidebar */
+
+.nav-section-label {
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.6);
+  cursor: default;
+}
+
+.nav-sublist {
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  padding: 0 0 0 1rem;
+  border-left: 1px solid rgba(255,255,255,0.15);
+}
+
+.nav-sublist .nav-text {
+  padding: 0;
+}
+
+.nav-sublist a {
+  display: block;
+  padding: 0.4rem 1rem;
+  font-size: 0.95rem;
+  color: #f5f5f5;
+  text-decoration: none;
+  opacity: 0.95;
+}
+
+.nav-sublist a:hover {
+  background-color: rgba(245, 143, 31, 0.25);
+}
+
+.nav-add-pet-link {
+  font-weight: 600;
+}
+
+/* Muted text inside profile right card */
+.profile-muted {
+    font-size: 13px;
+    color: #666666;
+}
+
+/* Profile edit modal */
+.profile-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1950;
+}
+
+.profile-modal-overlay.active {
+    display: flex;
+}
+
+.profile-modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 520px;
+    width: 90%;
+    padding: 22px 24px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    font-size: 14px;
+}
+
+.profile-modal h2 {
+    font-size: 18px;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+
+.profile-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+}
+
+.profile-modal-close:hover {
+    color: #000;
+}
+
+.profile-edit-form .form-row {
+    margin-bottom: 12px;
+}
+
+.profile-modal-actions {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.profile-edit-form textarea {
+    resize: vertical;
+}
+/* ========================= */
+/*   PROFILE EDIT / RECORD MODALS  */
+/* ========================= */
+
+.profile-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1900;
+}
+.profile-modal-overlay.active {
+    display: flex;
+}
+
+.profile-modal {
+    background-color: #ffffff;
+    border-radius: 12px;
+    max-width: 480px;
+    width: 90%;
+    padding: 20px 22px 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    font-size: 14px;
+}
+
+.profile-modal h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.profile-modal-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #555;
+}
+.profile-modal-close:hover {
+    color: #000;
+}
+
+.record-modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+/* RESERVATION SECTION */
+
+.reservation-section {
+    padding: 24px;
+}
+
+.reservation-card {
+    border: 2px solid var(--pet-orange);
+    border-radius: 12px;
+    padding: 20px 24px;
+    background-color: #ffffff;
+    max-width: 700px;
+}
+
+.reservation-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: var(--pet-gray);
+}
+
+/* Form layout */
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1 1 200px;
+}
+
+.group-label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.check-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+}
+
+.form-control {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font: inherit;
+}
+
+.field-hint {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+/* Summary box */
+
+.reservation-summary {
+    border-top: 1px solid #eee;
+    margin-top: 12px;
+    padding-top: 12px;
+    margin-bottom: 16px;
+}
+
+.reservation-summary h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    margin: 2px 0;
+}
+
+.summary-total {
+    font-weight: 700;
+}
+
+/* Alerts */
+
+.alert-box {
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    background-color: #ffe4e4;
+    color: #7a1a1a;
+}
+
+.alert-box.success {
+    background-color: #e4ffeb;
+    color: #176b2b;
+}
+
+.d-none {
+    display: none;
+}
+
+/* Confirm button */
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.confirm-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--pet-orange);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.confirm-btn:hover {
+    opacity: 0.9;
+}
+/* Appointment rows */
+.appointment-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.appt-text {
+    font-weight: 500;
+    color: #363A3D;
+}
+
+.appt-actions button {
+    margin-left: 8px;
+}
+
+/* Modal overlay */
+.appointment-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.appointment-modal-overlay.active {
+    display: flex;
+}
+
+.appointment-modal {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    padding: 24px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 22px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.modal-section {
+    margin-top: 18px;
+}
+
+.modal-section h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #363A3D;
+}
+
+.modal-section p {
+    margin: 2px 0;
+}
+
+.add-pet-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 16px;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pet-gray);
+    text-decoration: none;
+}
+
+.add-pet-back-link:hover {
+    color: var(--pet-orange);
+    text-decoration: underline;
+}
+

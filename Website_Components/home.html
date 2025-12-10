@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard · PetCare+</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="home-header">
+        <div class="home-header-top">
+            <img src="Logo_Unmasked.png" alt="PetCare+ logo" class="home-logo">
+
+            <div class="home-header-right">
+<button id="pet-thumb-btn" class="header-icon-btn" aria-label="Current pet">
+    <img
+        id="pet-thumb"
+        class="pet-thumb"
+        src="default-pet.png"
+        alt="Pet photo"
+    >
+</button>
+
+                <button id="show-menu" class="header-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="welcome-bar">
+            <div class="welcome-bar-inner">
+                <div class="welcome-text">
+                    Welcome back <span id="welcome-name">First Name</span>!
+                </div>
+                <button class="cta-btn logout-btn">
+                    Logout ➜
+                </button>
+            </div>
+        </div>
+    </header>
+
+        <nav id="nav-menu">
+    <ul class="nav-menu-items">
+        <div id="navbar-toggle">
+            <a href="#" class="menu-bars" id="hide-menu">☰</a>
+            <span class="sidebar-title">PetCare+</span>
+        </div>
+
+        <hr>
+
+        <li class="nav-text"><a href="home.html">Dashboard</a></li>
+
+        <li class="nav-section-label">Pet Profiles</li>
+        <ul id="pet-profiles-list" class="nav-sublist">
+        </ul>
+        <li class="nav-text">
+            <a href="add-pet.html" class="nav-add-pet-link">+ Add a new pet</a>
+        </li>
+
+        <hr>
+
+        <li class="nav-text"><a href="reservation.html">Book Appointment</a></li>
+        <li class="nav-text"><a href="calendar.html">Calendar</a></li>
+        <li class="nav-text"><a href="notifications.html">Notifications</a></li>
+        <li class="nav-text"><a href="login.html">Logout</a></li>
+    </ul>
+
+    </nav>
+
+    <div id="sidebar-overlay"></div>
+
+    <div id="pet-photo-popup" class="pet-photo-popup">
+        <img id="pet-photo-full" class="pet-photo-full" src="" alt="Pet Full Photo">
+    </div>
+
+    <main class="app-main dashboard-main">
+
+        <section class="dashboard-grid">
+
+<div class="dash-panel">
+    <div class="dash-panel-header dash-panel-header-centered">
+        Upcoming Appointments
+    </div>
+
+    <div class="dash-panel-body" id="appointments-container">
+        <p class="dash-empty-main">Your appointments will appear here.</p>
+    </div>
+</div>
+
+<div class="dash-panel">
+  <div class="dash-panel-header dash-panel-header-centered">
+    Reminders / Alerts
+  </div>
+
+  <div class="dash-panel-body dash-empty-state" id="reminders-container">
+    <p class="dash-empty-main">
+      Your reminders will appear here.
+    </p>
+  </div>
+</div>
+
+        </section>
+
+        <section class="dashboard-actions">
+            <a href="reservation.html" class="outline-link-btn">
+                Book an appointment
+            </a>
+            <a href="notifications.html" class="outline-link-btn">
+                Reminders
+            </a>
+            <a href="notifications.html" class="outline-link-btn">
+                Notifications
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      PETCARE+ · Caring made simple.
+    </div>
+
+    <ul class="footer-links">
+      <li><a href="home.html"  data-footer-link="home">Home</a></li>
+      <li><a href="index.html" data-footer-link="about">About Us</a></li>
+      <li><a href="#contact"   data-footer-link="contact">Contact</a></li>
+      <li><a href="#terms"     data-footer-link="terms">Terms of Service</a></li>
+      <li><a href="#privacy"   data-footer-link="privacy">Privacy Policy</a></li>
+    </ul>
+
+    <div>
+      © 2025 PetCare+. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<div id="footer-modal-overlay" class="footer-modal-overlay">
+  <div class="footer-modal">
+    <button class="footer-modal-close" aria-label="Close">×</button>
+    <h2 id="footer-modal-title"></h2>
+    <div id="footer-modal-body"></div>
+  </div>
+</div>
+
+<div id="appointmentModal" class="appointment-modal-overlay">
+    <div class="appointment-modal">
+        <button id="appointmentModalClose" class="modal-close">×</button>
+        <div id="appointmentModalBody"></div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

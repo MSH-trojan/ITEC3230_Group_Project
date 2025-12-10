@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pet Profile · PetCare+</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="home-header">
+        <div class="home-header-top">
+            <img src="Logo_Unmasked.png" alt="PetCare+ logo" class="home-logo">
+
+            <div class="home-header-right">
+                <button id="pet-thumb-btn" class="header-icon-btn" aria-label="Current pet">
+                    <img
+                        id="pet-thumb"
+                        class="pet-thumb"
+                        src="default-pet.png"
+                        alt="Pet photo"
+                    >
+                </button>
+
+                <button id="show-menu" class="header-menu-btn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="welcome-bar">
+            <div class="welcome-bar-inner">
+                <div class="welcome-text">
+                    “<span id="profile-pet-name">Pet Name</span>”s profile
+                </div>
+                <button class="cta-btn logout-btn">
+                    Logout ➜
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav id="nav-menu">
+        <ul class="nav-menu-items">
+            <div id="navbar-toggle">
+                <a href="#" class="menu-bars" id="hide-menu">☰</a>
+                <span class="sidebar-title">PetCare+</span>
+            </div>
+
+            <hr>
+
+            <li class="nav-text"><a href="home.html">Dashboard</a></li>
+
+            <li class="nav-section-label">Pet Profiles</li>
+            <ul id="pet-profiles-list" class="nav-sublist"></ul>
+            <li class="nav-text">
+                <a href="add-pet.html" class="nav-add-pet-link">+ Add a new pet</a>
+            </li>
+
+            <hr>
+
+            <li class="nav-text"><a href="reservation.html">Book Appointment</a></li>
+            <li class="nav-text"><a href="calendar.html">Calendar</a></li>
+            <li class="nav-text"><a href="notifications.html">Notifications</a></li>
+            <li class="nav-text"><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div id="sidebar-overlay"></div>
+
+    <!-- Pet photo popup -->
+    <div id="pet-photo-popup" class="pet-photo-popup">
+        <img id="pet-photo-full" class="pet-photo-full" src="" alt="Pet Full Photo">
+    </div>
+
+    <!-- Main content -->
+    <main class="app-main profile-main">
+        <section class="profile-grid">
+            <article class="profile-card">
+                <div class="profile-info-list">
+                    <p><span class="profile-label">Name:</span> <span id="profile-name">—</span></p>
+                    <p><span class="profile-label">Type:</span> <span id="profile-type">—</span></p>
+                    <p><span class="profile-label">Breed:</span> <span id="profile-breed">—</span></p>
+                    <p><span class="profile-label">Date of Birth:</span> <span id="profile-dob">—</span></p>
+                    <p><span class="profile-label">Weight:</span> <span id="profile-weight">—</span></p>
+                    <p><span class="profile-label">Color:</span> <span id="profile-color">—</span></p>
+                    <p><span class="profile-label">Sex:</span> <span id="profile-sex">—</span></p>
+                    <p><span class="profile-label">Notes:</span> <span id="profile-notes">—</span></p>
+                </div>
+
+                <div class="profile-card-actions">
+                    <button id="profile-edit-btn" class="cta-btn profile-edit-btn">
+                        Edit Info
+                    </button>
+                </div>
+            </article>
+
+            <article class="profile-card">
+                <div class="profile-right-content">
+                    <div>
+                        <p class="profile-section-title">Medical Records</p>
+                        <div id="profile-medical-list" class="profile-muted small">
+                            <p>No medical records added yet.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="profile-section-title profile-section-title-lower">Treatments</p>
+                        <div id="profile-treatment-list" class="profile-muted small">
+                            <p>No treatments added yet.</p>
+                        </div>
+                    </div>
+
+                    <button id="profile-add-btn" class="cta-btn profile-add-btn" type="button">
+                        + Add Record
+                    </button>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-top">
+                PETCARE+ · Caring made simple.
+            </div>
+
+            <ul class="footer-links">
+                <li><a href="home.html"  data-footer-link="home">Home</a></li>
+                <li><a href="index.html" data-footer-link="about">About Us</a></li>
+                <li><a href="#contact"   data-footer-link="contact">Contact</a></li>
+                <li><a href="#terms"     data-footer-link="terms">Terms of Service</a></li>
+                <li><a href="#privacy"   data-footer-link="privacy">Privacy Policy</a></li>
+            </ul>
+
+            <div>
+                © 2025 PetCare+. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div id="footer-modal-overlay" class="footer-modal-overlay">
+        <div class="footer-modal">
+            <button class="footer-modal-close" aria-label="Close">×</button>
+            <h2 id="footer-modal-title"></h2>
+            <div id="footer-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Edit Info Modal -->
+    <div id="profile-modal-overlay" class="profile-modal-overlay">
+        <div class="profile-modal">
+            <button id="profile-modal-close" class="profile-modal-close" aria-label="Close">×</button>
+            <h2>Edit pet info</h2>
+
+            <form id="profile-edit-form" class="profile-edit-form">
+                <div class="form-row">
+                    <label for="edit-pet-name">Name</label>
+                    <input type="text" id="edit-pet-name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="edit-pet-type">Type</label>
+                    <input type="text" id="edit-pet-type" placeholder="Dog, Cat, Rabbit…" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="edit-pet-breed">Breed</label>
+                    <input type="text" id="edit-pet-breed" required>
+                </div>
+
+                <div class="form-row">
+                    <label>Date of Birth (optional)</label>
+                    <div class="birthday-row">
+                        <input type="text" id="edit-bday-dd" placeholder="DD" maxlength="2">
+                        <input type="text" id="edit-bday-mm" placeholder="MM" maxlength="2">
+                        <input type="text" id="edit-bday-yy" placeholder="YYYY" maxlength="4">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="edit-pet-weight">Weight (kg)</label>
+                    <input type="text" id="edit-pet-weight" placeholder="e.g., 4.2">
+                </div>
+
+                <div class="form-row">
+                    <label for="edit-pet-color">Color</label>
+                    <input type="text" id="edit-pet-color" placeholder="e.g., Black and white">
+                </div>
+
+                <div class="form-row">
+                    <label for="edit-pet-sex">Sex</label>
+                    <input type="text" id="edit-pet-sex" placeholder="Female / Male / Neutered…">
+                </div>
+
+                <div class="form-row">
+                    <label for="edit-pet-notes">Notes (optional)</label>
+                    <textarea id="edit-pet-notes" rows="3" class="form-control"
+                              placeholder="Anything special about this pet…"></textarea>
+                </div>
+
+                <div class="profile-modal-actions">
+                    <button type="submit" class="cta-btn">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Record Modal -->
+    <div id="record-modal-overlay" class="profile-modal-overlay">
+        <div class="profile-modal">
+            <button id="record-modal-close" class="profile-modal-close" aria-label="Close">×</button>
+            <h2>Add a new record</h2>
+
+            <p>What would you like to add for this pet?</p>
+            <div class="record-modal-buttons">
+                <button id="record-add-treatment" class="cta-btn" type="button">
+                    Treatment
+                </button>
+                <button id="record-add-medical" class="dash-outline-btn" type="button">
+                    Medical record (PDF)
+                </button>
+            </div>
+
+            <p id="record-modal-selected" class="profile-muted mt-3">
+                Select a type above, then upload a PDF.
+            </p>
+
+            <div class="form-row mt-3">
+                <label for="record-title">Record title</label>
+                <input type="text" id="record-title"
+                       placeholder="e.g., Annual vaccines visit">
+            </div>
+
+            <div class="form-row">
+                <label for="record-date">Date</label>
+                <input type="date" id="record-date">
+            </div>
+
+            <div class="form-row">
+                <label for="record-file">PDF file</label>
+                <input type="file" id="record-file" accept="application/pdf">
+                <small class="text-muted">
+                    PDF only. For this demo, the file name is saved locally in your browser.
+                </small>
+            </div>
+
+            <div class="profile-modal-actions">
+                <button type="button" id="record-save-btn" class="cta-btn">
+                    Save record
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
